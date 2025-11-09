@@ -1,0 +1,23 @@
+name: Local Build & Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build image
+        run: docker build -t localapp:ci ./backend
+      - name: Run container and test
+        run: |
+          docker run -d -p 5000:5000 --name app localapp:ci
+          sleep 5
+          curl -f http://localhost:5000/health

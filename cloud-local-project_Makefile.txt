@@ -1,0 +1,22 @@
+.PHONY: up down logs tf-init tf-plan tf-apply tf-destroy
+
+up:
+	docker compose up -d
+
+down:
+	docker compose down -v
+
+logs:
+	docker logs -f localstack
+
+tf-init:
+	cd terraform && terraform init
+
+tf-plan:
+	cd terraform && terraform plan
+
+tf-apply:
+	cd terraform && terraform apply -auto-approve
+
+tf-destroy:
+	cd terraform && terraform destroy -auto-approve
