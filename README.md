@@ -9,7 +9,7 @@ Here’s your **enhanced, professional-grade `README.md`** 👇
 ## 📘 **README.md**
 
 ```markdown
-# ☁️ Cloud Local Project
+# ☁️ CLOUD LOCAL PROJECT
 
 > A hands-on **Cloud Engineering project** that emulates AWS services locally using **Docker**, **LocalStack**, and **Terraform**, with a front-end deployed on **GitHub Pages**.
 
