@@ -164,14 +164,3 @@ A minimal HTML page demonstrating local-to-cloud connectivity.
 📂 [GitHub Profile](https://github.com/himanshupri206)
 📫 *Building Cloud, DevOps, and Automation Projects*
 
----
-
-## 🪄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🌟 Project Preview
-
-![Cloud Local Project Preview](https://raw.githubusercontent.com/himanshupri206/cloud-local-project/main/app/screenshot.png)
