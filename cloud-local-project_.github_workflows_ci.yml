@@ -19,5 +19,17 @@ jobs:
       - name: Run container and test
         run: |
           docker run -d -p 5000:5000 --name app localapp:ci
-          sleep 5
-          curl -f http://localhost:5000/health
+          echo "Waiting for app to be healthy..."
+          for i in {1..10}; do
+            if curl -fs http://localhost:5000/health; then
+              echo "Health check passed!"
+              break
+            else
+              echo "Not ready yet ($i)"
+              sleep 2
+            fi
+          done
+          docker logs app
+      - name: Cleanup container
+        if: always()
+        run: docker rm -f app || true
